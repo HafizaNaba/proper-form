@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <!-- Link your external CSS file here -->
+
+</head>
+<body>
+<style>
+    @font-face {
+        font-family:"LobsterTwo-Bold.ttf" ;
+        src: url(fonts/LobsterTwo-Bold.ttf);
+    }
+    h1{
+        text-align: center;
+        font-family:"LobsterTwo-Bold.ttf" ;
+font-size: 40px;
+    }
+    form{
+        margin: 10px 510px;
+    }
+     .fields{
+        width: 300px;
+        padding: 5px;
+    }
+    body{
+        background-color: rgb(180, 201, 159);
+ 
+    }
+    #result{
+        padding: 20px;
+border-radius: 8px; 
+        height: auto;
+        width: 300px;
+        border: 2px groove white;
+        box-shadow: 5px 5px 15px rgba(0.2);
+        margin: 10px 510px;
+    display: none;
+    }
+</style>
+    <h1>Student Registeration Form</h1>
+<form action="" method="post" id="detail">
+    <label for="name">Student name :</label>  <br>
+    <input type="text" id="name" class="fields" required>
+ <br> <br>
+      <label for="Fname">Father name :</label>  <br>
+    <input type="text"id="Fname"  class="fields" required>
+
+ <br> <br>
+      <label for="Age">Age :</label>  <br>
+    <input type="number" id="Age"  class="fields" required>
+ <br> <br>
+      <label for="email">Email :</label>  <br>
+    <input type="email" id="email"  class="fields" name="email" required>
+ <br> <br>
+      <label for="Course">Course:</label>  <br>
+ <select  id="Course" class="fields" required>
+    <option value="">Choose your course</option>
+    <option value="Web development">Web development</option>
+    <option value="Pyhton">Pyhton </option>
+    <option value="Data science">Data science </option>
+</select>
+<br><br>
+
+<input type="submit">  
+<input type="reset" value="Reset form">
+</form>
+
+<div id="result"></div>
+   
+
+
+
+<script>
+let myform = document.getElementById('detail');
+let con = document.getElementById('result');
+
+
+myform.addEventListener('submit' , function(e){
+    e.preventDefault();
+    
+    let usrAge = document.getElementById('Age').value
+    if(usrAge < 15 || usrAge > 35){
+        alert("you are not eligible beacuse of age")
+        con.style.display = "none"
+        return;
+    }else{
+        alert("you are eligible")
+    }
+
+let std = document.getElementById('name').value; + "<br>"
+let father = document.getElementById('Fname').value;
+let year = document.getElementById('Age').value;
+let id = document.getElementById('email').value;
+let Field = document.getElementById('Course').value;
+
+
+con.innerHTML = "<h3>Successfully Submit</h3>" + 
+    "Name : " + std + "<br>" + "Father Name : " + father + "<br>" + 
+    "Age : " + year + "<br>" + "Email : " + id + "<br>" + "Course : " + Field
+
+        con.style.display = "block"
+
+
+
+})
+
+
+
+</script>
+
+
+
+
+</body>
+</html>
