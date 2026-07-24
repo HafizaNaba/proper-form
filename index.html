@@ -17,27 +17,56 @@
         text-align: center;
         font-family:"LobsterTwo-Bold.ttf" ;
 font-size: 40px;
+color:  rgb(16, 42, 58);
     }
     form{
-        margin: 10px 510px;
+        margin: 10px 460px;
+        background-color: rgba(24, 17, 17 , 0.1);
+        border-radius: 20px;
+        padding: 30px;
+        width: 350px;
     }
      .fields{
         width: 300px;
         padding: 5px;
     }
     body{
-        background-color: rgb(180, 201, 159);
+        background-color: rgba(18, 53, 73 , 0.4);
  
     }
     #result{
         padding: 20px;
 border-radius: 8px; 
         height: auto;
-        width: 300px;
-        border: 2px groove white;
+        width: 350px;
+        border: 10px groove rgb(3, 24, 36);
         box-shadow: 5px 5px 15px rgba(0.2);
-        margin: 10px 510px;
+        margin: 10px 460px;
     display: none;
+
+    }
+    #result h3{
+        font-family:"LobsterTwo-Bold.ttf" ;
+color:  rgb(9, 25, 36);
+
+    }
+
+    .btn{
+        padding: 7px;
+        border: 7px groove  rgb(18, 53, 73);
+     border-radius: 10px;
+      font-family:"LobsterTwo-Bold.ttf" ;
+    font-size: 17px;
+    }
+    .btn:hover{
+        background-color:  rgb(3, 24, 36) ;
+        color: white;
+   
+    }
+    label{
+      font-family:"LobsterTwo-Bold.ttf" ;
+color:  rgb(9, 25, 36);
+
     }
 </style>
     <h1>Student Registeration Form</h1>
@@ -64,8 +93,8 @@ border-radius: 8px;
 </select>
 <br><br>
 
-<input type="submit">  
-<input type="reset" value="Reset form">
+<input type="submit" class="btn">  
+<input type="reset" value="Reset form" class="btn">
 </form>
 
 <div id="result"></div>
@@ -98,8 +127,8 @@ let Field = document.getElementById('Course').value;
 
 
 con.innerHTML = "<h3>Successfully Submit</h3>" + 
-    "Name : " + std + "<br>" + "Father Name : " + father + "<br>" + 
-    "Age : " + year + "<br>" + "Email : " + id + "<br>" + "Course : " + Field
+    "<i><b>Name : " + std + "<br>" + "Father Name : " + father + "<br>" + 
+    "Age : " + year + "<br>" + "Email : " + id + "<br>" + "Course : " + Field + "</b></i>"
 
         con.style.display = "block"
 
